@@ -1,0 +1,35 @@
+Node* midLL(Node* head){
+  if(!head || !head->next) return head;
+  Node* slow = head;
+  Node* fast = head;
+  while(fast->next && fast->next->next){
+    slow = slow->next;
+    fast = fast->next->next;
+  }
+  return slow;
+}
+
+Node* merge(Node* l1, Node* l2){
+  if(!l1) return l2;
+  if(!l2) return l1;
+  Node* nnode;
+    if(l1->val < l2->val){
+        nnode = l1;
+        nnode->next = merge(l1->next,l2);
+        return nnode;
+    }
+    else{
+        nnode = l2;
+        nnode->next = merge(l1,l2->next);
+        return nnode;
+    }
+
+Node* mergeSort(Node* head){
+  Node* m = midLL(head);
+  Node* l1 = head;
+  Node* l2 = m->next;
+  m->next = NULL;
+  l1 = mergeSort(l1);
+  l2 = mergeSort(l2);
+  return merge(l1,l2)
+}
