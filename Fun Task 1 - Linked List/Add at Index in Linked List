@@ -1,0 +1,33 @@
+void addAtFirst(Node* head, int data){
+  Node* nnode = new Node();
+  nnode->val = data;
+  nnode->next = head;
+  head = nnode;
+}
+
+void addAtLast(Node* head, int data){
+  Node* nnode = new Node();
+  nnode->val = data;
+  nnode->next = NULL;
+  Node* temp = head;
+  while(!temp->next) temp = temp->next;
+  temp->next = nnode;
+}
+
+void addAtIndex(Node* head, int idx, int data){
+  if(idx<0 || idx>size){
+    cout << "Invalid Position" << endl;
+    return;
+  }
+  if(idx==0) addAtFirst(head,data);
+  else if(idx == size) addAtLAst(head,data);
+  else{
+    Node* nnode = new Node();
+    nnode->val = data;
+    Node* temp = head;
+    for(int i=0; i<idx-1; i++) temp = temp->next;
+    nnode->next = temp->next;
+    temp->next = nnode;
+  }
+  size++;
+}
