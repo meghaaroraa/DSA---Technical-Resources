@@ -1,1 +1,1 @@
-# DSA---Technical-Resources
+# DSA-Technical-Resources
