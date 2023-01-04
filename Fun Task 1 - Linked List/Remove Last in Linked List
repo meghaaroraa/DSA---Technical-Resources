@@ -1,0 +1,11 @@
+void removeLast(Node* head){
+  if(!head) return NULL; // 0 elements 
+  if(!head->next){ // 1 element
+    delete head;
+    return Null;
+  }
+  Node* temp = head;
+  while(temp->next->next) temp = temp->next;
+  delete temp->next;
+  temp->next = NULL;
+}
