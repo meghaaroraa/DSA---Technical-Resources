@@ -1,0 +1,11 @@
+int kthFromEnd(Node* head, int k){
+  if(!head) return NULL;
+  Node* slow = head;
+  Node* fast = head;
+  while(--k) fast = fast->next;
+  while(fast){
+    slow = slow->next;
+    fast = fast->next;
+  }
+  return slow->val;
+}
