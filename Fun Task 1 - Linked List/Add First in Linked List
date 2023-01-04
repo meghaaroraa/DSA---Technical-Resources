@@ -1,0 +1,6 @@
+void addFirst(Node* head, int data){
+  Node* nnode = new Node();
+  nnode->val = data;
+  nnode->next = head;
+  head == nnode;
+}
