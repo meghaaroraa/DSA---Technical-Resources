@@ -1,0 +1,25 @@
+* Linked List is the 2+2 of data structures
+
+* edges cases you need to check to avoid NULL point exception
+  > n = 0 : head is null
+  > n = 1 : linked list with one node
+  > n = 2 : linked list with 2 nodes
+  > n = odd : linked list with odd number of nodes
+  > n = even : linked list with even number of nodes
+  
+* Avoid using extra space
+* Linked list is used because it does not use continuous memory
+* Solve linked list problems using O(1) space
+
+* Most important function 
+  > Middle of linked list
+  > Reverse pointer of linked list
+  > Remove first
+  > Add first
+  > Add last
+  
+* Break your code in functions
+* It becomes easier to work with pointers
+
+* Make dummy nodes with some value instead of NULL nodes
+* Helps in avoiding NULL checks
