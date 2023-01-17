@@ -1,0 +1,26 @@
+* Drawback of singly linked list -> cannot travel backwards
+
+* Can travel in both directions
+* Doubly linked list has 2 pointers 
+  > next : forward traversal in linked list
+  > previous : backwards traversal in linked lsit
+  
+* benefits : easier to insert nodes in between of linked list
+* drawbacks : previous pointer needs extra space
+
+* Functions in doubly linked list :
+  > addFirst(x)
+  > addLast(x)
+  > addAfterNode(x, node)
+  
+  > removeFirst()
+  > removeLast()
+  > removeNode(node)
+  
+  > getFirst()
+  > getLast()
+  > getAt(idx)
+  
+  > size()
+  > isEmpty()
+  > clear()
