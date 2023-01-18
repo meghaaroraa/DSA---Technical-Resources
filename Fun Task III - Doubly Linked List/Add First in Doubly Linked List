@@ -1,0 +1,14 @@
+class Node{
+  int val;
+  Node* next;
+  Node* prev;
+}
+
+void push(Node* head, int data){
+  Node* nnode = new Node();
+  nnode->val = data;
+  nnode->next = head;
+  nnode->prev = NULL;
+  if(head) head->prev = nnode;
+  head = nnode;
+}
