@@ -1,0 +1,14 @@
+void removeFirst(Node* head){
+  if(!head){
+    cout << "List is empty" << endl;
+    return;
+  }
+  if(!head->next){
+    head = NULL;
+    return;
+  }
+  Node* temp = head;
+  head = head->next;
+  head->prev = NULL;
+  delete(temp);
+}
