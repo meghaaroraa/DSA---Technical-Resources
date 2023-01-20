@@ -1,0 +1,18 @@
+void removeLast(NOde* head){
+  if(!head){
+    cout << "List is empty" << endl;
+    return;
+  }
+  if(!head->next){
+    head = NULL;
+    return;
+  }
+  Node* temp = head;
+  Node* prev = NULL;
+  while(temp->next){
+    prev = temp;
+    temp = temp->next;
+  }
+  prev->next = NULL;
+  delete(temp);
+}
