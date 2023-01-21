@@ -1,0 +1,20 @@
+vector<int> displayForward(Node* head){
+  vector<int> v;
+  Node* temp = head;
+  while(temp){
+    v.push_back(temp->data);
+    temp = temp->next;
+  }
+  return v;
+}
+
+vector<int> displayBackward(Node* head){
+  vector<int> v;
+  Node* temp = head;
+  while(temp->next) temp = temp->next;
+  while(temp){
+    v.push_back(temp->val);
+    temp = temp->prev;
+  }
+  return v;
+}
