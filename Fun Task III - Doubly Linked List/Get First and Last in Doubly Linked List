@@ -1,0 +1,31 @@
+Node* getFirst(Node* head){
+  if(!head){
+    cout << "List is empty" << endl;
+    return NULL;
+  }
+  return head;
+}
+
+Node* getLast(Node* head){
+  if(!head){
+    cout << "List is empty" << endl;
+    return NULL;
+  }
+  Node* temp = head;
+  while(temp->next) temp = temp->next;
+  return temp;
+}
+
+int size(Node* head){
+  if(!head){
+    cout << "List is empty" << endl;
+    return -1;
+  }
+  Node* temp = head;
+  int cnt = 0;
+  while(temp){
+    temp = temp->next;
+    cnt++;
+  }
+  return cnt;
+}
