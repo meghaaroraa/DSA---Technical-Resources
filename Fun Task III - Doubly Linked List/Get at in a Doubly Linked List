@@ -1,0 +1,13 @@
+Node* getAt(Node* head, int idx){
+  if(!head){
+    cout << "List is empty" << endl;
+    return NULL;
+  }
+  if(idx < 0){
+    cout << "Index is invalid" << endl;
+    return NULL;
+  }
+  while(temp && idx--) temp = temp->next;
+  if(!temp) cout << "Index is invalid" << endl;
+  return temp;
+}
