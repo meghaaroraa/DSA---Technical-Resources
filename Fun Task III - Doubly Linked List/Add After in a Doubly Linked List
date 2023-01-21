@@ -1,0 +1,14 @@
+void addAfter(Node* refNode, int data){
+  Node* nnode = new Node(data);
+  Node* nxt = refNode->next;
+  if(!nxt){
+    refNode->next = nnode;
+    nnode->prev = refNode;
+  }
+  else{
+    refNode->next = nnode;
+    nnode->prev = refNode;
+    nnode->next = nxt;
+    nxt->prev = nnode;
+  }
+}
