@@ -1,0 +1,13 @@
+void removeAfter(Node* refNode){
+  Node* nxt = refNode->next;
+  if(!nxt) cout << "Location is invalid" << endl;
+  else if(!nxt->next){
+    refNode->next = NULL;
+    delete(nxt);
+  }
+  else{
+    refNode->next = nxt->next;
+    nxt->next->prev = refNode;
+    delete(nxt);
+  }
+}
