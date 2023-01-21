@@ -1,0 +1,42 @@
+void removeFirst(Node* head){
+  if(!head->next){
+    head = NULL;
+    return;
+  }
+  Node* temp = head;
+  head = head->next;
+  delete(temp);
+}
+
+void removeLast(Node* head){
+  if(!head->next){
+    head = NULL;
+    return;
+  }
+  Node* temp = head;
+  while(temp->next) temp = temp->next;
+  Node* prv = temp->prev;
+  prv->next = NULL;
+  delete(temp);
+}
+
+void removeAt(Node* head, int idx){
+  if(!head){
+    cout << "List is empty" << endl;
+    return;
+  }
+  if(idx < 0){
+    cout << "Index is invalid" << endl;
+    return;
+  }
+  Node* temp = head;
+  while(temp && idx--) temp = temp->next;
+  if(!temp) cout << "Index is invalid" << endl;
+  else if(temp == head) removeFirst(head);
+  else if(!temp->next) removeLast(head);
+  else{
+    Node* prv = temp->prev;
+    prv->next = temp->next;
+    temp->mext->prev = prv;
+  }
+}
