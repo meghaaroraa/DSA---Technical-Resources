@@ -1,0 +1,46 @@
+void addFirst(Node* head, int data){
+  Node* nnode = new Node(data);
+  if(!head){
+    head = nnode;
+    return;
+  }
+  nnode->next = head;
+  head->prev = nnode;
+  head = nnode;
+}
+
+void addLAst(Node* head, int data){
+  Node* nnode = new Node(data);
+  if(!head){
+    head = nnode;
+    return;
+  }
+  Node* temp = head;
+  while(temp->next) temp = temp->next;
+  temp->next = nnode;
+  nnode->prev = temp;
+}
+
+void addAt(Node* head, int idx, int data){
+  if(!head){
+    cout << "List is empty" << endl;
+    return;
+  }
+  if(idx < 0){
+    cout << "Index out of range" << endl;
+    return;
+  }
+  Node* temp = head;
+  while(temp && idx--) temp = temp->next;
+  if(!temp) cout << "Index out of range" << endl;
+  else if(temp == head) addFisrt(head,data);
+  else if(!temp->next) addLast(head,data);
+  else{
+    Node* nnode = new Node(data);
+    Node* prv = temp->prev;
+    prv->next = nnode;
+    nnode->prev = prv;
+    nnode->next = temp;
+    temp->prv = nnode;
+  }
+}   
