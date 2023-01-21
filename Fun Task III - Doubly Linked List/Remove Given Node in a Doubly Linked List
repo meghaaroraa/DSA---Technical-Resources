@@ -1,0 +1,16 @@
+void removeNode(Node* refNode){
+  if(!refNode->prev && !refNode->next) delete(refNode);
+  else if(!refNode->prev){
+    refNode->next->prev = NULL;
+    delete(refNode);
+  }
+  else if(!refNode->next){
+    refNode->prev->next = NULL;
+    delete(refNode);
+  }
+  else{
+    refNode->prev->next = refNode->next;
+    refNode->next->prev = refNode->prev;
+    delete(refNode);
+  }
+}
