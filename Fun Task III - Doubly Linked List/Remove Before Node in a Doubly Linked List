@@ -1,0 +1,13 @@
+void removeBefore(Node* refNode){
+  Node* prv = refNode->prev;
+  if(!prv) cout << "Location is invalid" << endl;
+  else if(!prv->prev){
+    refNode->prev = NULL;
+    delete(prv);
+  }
+  else{
+    prv->prev->next = refNode;
+    refNode->prev = prv;
+    delete(prv);
+  }
+}
