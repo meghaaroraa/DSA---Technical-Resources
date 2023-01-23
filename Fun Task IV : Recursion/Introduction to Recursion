@@ -1,0 +1,25 @@
+* Funtions in programming is similar to functions in mathematics
+  > int funct() { }
+  > f(x) = x + 5
+  
+* Principle of mathematical induction
+  > Prove that formula holds true for 1
+  > Assume that the formula is true for n = k
+  > Prove that formula holds true for n = k + 1
+  
+* Steps in recursion
+  > Expectation
+  > Faith
+  > Can you express expectations in terms of faith?
+  
+* Thinking
+  > High level thinking : recursive case
+  > Low level thinking : base case
+  
+* Print decreasing sequence from n to 1
+  
+  void func(int n) {
+    if(n==0) return;
+    cout << n << " ";
+    func(n-1);
+  }
