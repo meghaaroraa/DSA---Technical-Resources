@@ -1,0 +1,8 @@
+void printIncreasing(int n){
+  // Base case
+  if(n==0) return;
+  
+  // Recursive case
+  printIncreasing(n-1);
+  cout << n << " ";
+}
