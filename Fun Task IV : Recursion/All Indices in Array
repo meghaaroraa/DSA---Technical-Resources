@@ -1,0 +1,23 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+vector<int> allOccurrence(int *arr, int n, int data, vector<int> &v){
+  // Base case
+  if(n < 0) return v;
+  
+  if(arr[n] == data) v.push_back(n);
+  return allOccurrence(arr,n-1,data,v);
+}
+
+int main(){
+  int arr[10] = {1,2,3,4,5,2,3,4,5};
+  int n = sizeof(arr) / sizeof(int);
+  int data = 2;
+  vector<int> v;
+  allOccurrence(arr,n-1,data,v);
+  for(int i=0; i<v.size(); i++){
+      cout << v[i] << " ";
+  }
+  return 0;
+}
