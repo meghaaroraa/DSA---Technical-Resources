@@ -1,0 +1,21 @@
+#include <iostream>
+#include <climits>
+using namespace std;
+
+int maxElement(int *arr, int n, int mx){
+  // Base case
+  if(n<0) return mx;
+  
+  // Recursive case
+  if(arr[n] > mx) mx = arr[n];
+  maxElement(arr,n-1,mx);
+}
+
+int main(){
+
+  int arr[100] = {1,2,3,4,5};
+  int n = 5;
+  cout << maxElement(arr,n-1,INT_MIN);
+
+  return 0;
+}
