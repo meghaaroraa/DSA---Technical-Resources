@@ -1,0 +1,31 @@
+* Print the instructions to move disks from tower 1 to tower 3 using tower 3
+* Follow the following rules
+  > Move 1 disk at a time
+  > Never place a smaller disk under a larger disk
+  > You can only move a disk at the top
+  
+void towerOfHanoi(int n, char A, char B, char C){
+  // Base case
+  if(n==0){
+    return;
+  }
+
+  // Recursive case
+  // 1. Take n-1 th disk from source to helper
+  towerOfHanoi(n-1,A,C,B);
+
+  // 2. Put the nth disk from source to destination
+  cout << "Taking disk " << n << " from " << src << " to " << des << endl;
+
+  // 3. Take n-1 th disk from helper to destination
+  towerOfHanoi(n-1,C,B,A);
+}
+
+* Output
+  Taking disk 1 from A to B
+  Taking disk 2 from A to C
+  Taking disk 1 from B to C
+  Taking disk 3 from A to B
+  Taking disk 1 from C to A
+  Taking disk 2 from C to B
+  Taking disk 1 from A to B
