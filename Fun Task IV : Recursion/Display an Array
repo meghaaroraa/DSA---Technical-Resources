@@ -1,0 +1,15 @@
+void displayArray(int *arr, int n){
+  // Base case
+  if(n<0) return;
+  
+  // Recursive case
+  displayArray(arr,n-1);
+  cout << arr[n] << " ";
+}
+
+int main(){
+  int arr[10] = {10, 20, 30, 40, 50}
+  int n = sizeof(arr) / sizeof(int);
+  displayArray(arr,n-1);
+  return 0;
+}
