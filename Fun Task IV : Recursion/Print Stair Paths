@@ -1,0 +1,20 @@
+#include <iostream>
+using namespace std;
+
+void printStairPath(int n, string path){
+    if(n < 0) return;
+    if(n == 0){
+        cout << path << " ";
+        return;
+    }
+
+    printStairPath(n-1, path + "1");
+    printStairPath(n-2, path + "2");
+    printStairPath(n-3, path + "3");
+}
+
+int main() {
+    string path = "";
+    printStairPath(4,path);
+    return 0;
+}
