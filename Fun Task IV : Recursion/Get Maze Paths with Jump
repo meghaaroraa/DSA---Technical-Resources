@@ -1,0 +1,72 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+// sr = source row
+// sc = source column
+// dr = destination row
+// dc = destination column
+
+vector<string> getMazePaths(int sr, int sc, int dr, int dc){
+    // Base case
+    if(sr == dr && sc == dc){
+        return {""};
+    }
+    
+    // Recursive case
+    vector<string> path;
+
+    // Horizontal moves
+    for(int ms=1; ms <= dc-sc; ms++){
+        vector<string> hpath = getMazePaths(sr, sc+ms, dr, dc);
+        //for(string h : hpath) path.push_back("h" + ms + h);
+        for(string h : hpath) path.push_back("h" + h);
+    }
+
+    // Vertical moves
+    for(int ms=1; ms <= dr-sr; ms++){
+        vector<string> vpath = getMazePaths(sr+ms, sc, dr, dc);
+        for(string v : vpath) path.push_back("v" + v);
+    }
+
+    // Diagonal moves
+    for(int ms=1; ms <= dr-sr && ms <= dc-sc; ms++){
+        vector<string> dpath = getMazePaths(sr+ms, sc+ms, dr, dc);
+        for(string d : dpath) path.push_back("d" + d);
+    }
+    return path;
+}
+
+int main(){
+
+    int n = 3;
+    int m = 3;
+    vector<string> paths = getMazePaths(0,0,n-1,m-1);
+    for(int i=0; i<paths.size(); i++) cout << paths[i] << endl;
+    return 0;
+}
+
+
+// OUTPUT
+hhvv
+hhv
+hvhv
+hvvh
+hvd
+hvh
+hdv
+hvv
+hv
+vhhv
+vhvh
+vhd
+vhv
+vvhh
+vvh
+vdh
+vhh
+vh
+dhv
+dvh
+dd
+d
