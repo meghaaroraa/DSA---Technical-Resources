@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+
+void helper(string s, string ans, int cnt, int pos){
+  if(pos == s.length()){
+    if(cnt == 0) cout << ans << endl;
+    else cout << ans + to_string(cnt) + s[pos]<< endl;
+    return;
+  }
+  
+  if(cnt > 0) helper(s, ans + to_string(cnt) + s[pos], 0, pos+1);
+  else helper(s, ans + s[pos], 0, pos+1);
+  helper(s, ans, cnt+1, pos+1);
+}
+
+int main(){
+
+  string s;
+  cin >> s;
+  helper(s, "", 0, 0);
+
+  return 0;
+}
