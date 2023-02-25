@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+
+void printMazePathsWithJumps(int sr, int sc, int dr, int dc, string psf){
+    // base case
+    if(sr==dr-1 && sc==dc-1) {
+        cout << psf << endl;
+        return;
+    }
+    
+    // ms : move size
+    for(int ms=1; ms <= dc-sc; ms++){
+        printMazePathsWithJumps(sr, sc+ms, dr, dc, psf+"h"+to_string(ms));
+    }
+    for(int ms=1; ms<=dr-sr; ms++){
+        printMazePathsWithJumps(sr+ms, sc, dr, dc, psf+"v"+to_string(ms));
+    }
+    for(int ms=1; ms<=dr-sr && ms<=dc-sc; ms++){
+        printMazePathsWithJumps(sr+ms, sc+ms, dr, dc, psf+"v"+to_string(ms));
+    }
+}
+
+int main() {
+    int n, m;
+    cin >> n >> m;
+    printMazePathsWithJumps(0,0,n,m,"");
+    return 0;
+}
