@@ -1,0 +1,37 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+void printAllSubsets(int *arr, int n, int sum, vector<int> ans){
+    if(sum == 0){
+        for(int i=0; i<ans.size(); i++){
+            cout << ans[i] << " ";
+        }
+        cout << endl;
+        return;
+    }
+
+    if(n == 0) return;
+
+    printAllSubsets(arr, n-1, sum, ans);
+    ans.push_back(arr[n-1]);
+    printAllSubsets(arr, n-1, sum - arr[n-1], ans);
+}
+
+int main() {
+
+    int n;
+    cin >> n;
+    int arr[100];
+
+    for(int i=0; i<n; i++){
+        cin >> arr[i];
+    }
+
+    int sum;
+    cin >> sum;
+
+    vector<int> ans;
+    printAllSubsets(arr, n, sum, ans);
+    return 0;
+}
