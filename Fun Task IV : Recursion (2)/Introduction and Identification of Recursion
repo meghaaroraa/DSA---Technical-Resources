@@ -1,0 +1,20 @@
+* JEDI ban jao recursion ke
+
+* FLOW
+  - make input smaller
+  - Decision space
+  - Recursive tree - sole of recursion
+  - 2 steps to colve any recursive problem
+  
+* MAKE INPUT SMALLER
+  - hum input ko deliberatly small nahi krte
+  - unconsciously ho jaata hai
+  - we take some steps which in turn make the input smaller
+  
+* DECISION SPACE
+  - used for indentification
+  - recursive problem hai ke nahi
+  
+* RECURSIVE TREE
+  - designing a recursive with respect to the givne problem
+  - recursive tree identify kar liya toh writing the code will be a peice of cake
