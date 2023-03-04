@@ -1,0 +1,41 @@
+#include <iostream>
+using namespace std;
+
+bool isItaSafePlaceForTheQueen(int chess[][100], int row, int col, int n){
+    for(int i=row-1, j=col; i>=0; i--){
+        if(chess[i][j] == 1) return false;
+    }
+
+    for(int i=row-1, j=col-1; i>=0, j>=0; i--, j--){
+        if(chess[i][j] == 1) return false;
+    }
+
+    for(int i=row-1, j=col+1; i>=0, j<n; i--, j++){
+        if(chess[i][j] == 1) return false;
+    }
+
+    return true;
+}
+
+void printQueens(int chess[][100], string qsf, int row, int n){
+    if(row == n){
+        cout << qsf << endl;
+        return;
+    }
+
+    for(int col=0; col<n; col++){
+        if(isItaSafePlaceForTheQueen(chess, row, col, n) == true){
+            chess[row][col] = 1;
+            printQueens(chess, qsf + to_string(row) + "-" + to_string(col), row+1, n);
+            chess[row][col] = 0;
+        }
+    }
+}
+
+int main() {
+    int n;
+    cin >> n;
+    int chess[100][100];
+    printQueens(chess, "", 0, n);
+    return 0;
+}
