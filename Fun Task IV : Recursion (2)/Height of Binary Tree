@@ -1,0 +1,13 @@
+* input : root node of binary tree
+* output : height of binary tree (integer)
+* hypothesis : height(root) -> height of tree
+* induction : max(lh,rh)+1
+* smallest valid input : root = null
+
+int height(node* root){
+  if(!root) return 0;
+  
+  int lh = height(root->left);
+  int rh = height(root->right);
+  return max(lh,rh) + 1;
+}
