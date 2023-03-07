@@ -1,0 +1,25 @@
+- FLOW
+  * methods to think for a recursive problem
+  * why making the input smaller is popular
+  * printing numbers from 1 to n
+  
+- Approaches to solve a recursive problem
+  * recursive tree (decisions)
+  * bace condition - induction - hypothesis (making input smaller)
+  * choice diagram (DP)
+  * 
+  
+- Hypothesis approach
+  * base condition
+    - smallest valid input
+    - largest invalid input
+    
+- print numbers from 1 to n
+  * input : n
+  * output : 1 2 ... n
+  * hypothesis
+    - print(n) 1 to n 
+    - print(n-1) 1 to n-1
+  * induction
+    - cout << n << " "
+  * base condition : smallest valid input (1)
