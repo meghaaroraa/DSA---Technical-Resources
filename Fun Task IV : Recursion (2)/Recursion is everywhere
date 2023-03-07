@@ -1,0 +1,29 @@
+- RECURSION IS EVERYWHERE
+
+- Recursion is used in all data structures
+  * array
+  * string
+  * tree
+  * graph
+  * stack
+  * heap
+ 
+ - Algorithms based on recurion
+  * dynamic programming
+  * backtracking
+  * divide and conquer
+  
+- Recursion problems
+  * printing numbers from 1 to n and n to 1
+  * sorting an array
+  * sorting a stack
+  * delete middle element of a stack
+  * remove duplicates from a string
+  * count the number of occurrences in a string
+  * subsets
+  * permutations
+  * josephus problem
+  
+- extended input-output method
+  * binary string problems
+  * generating balanced paranthesis
