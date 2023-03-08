@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+
+void permutation(string in, string out){
+    if(in.length() == 0){
+        cout << out << endl;
+        return;
+    }
+
+    string op1 = out;
+    string op2 = out;
+    op1.push_back('_');
+    op1.push_back(in[0]);
+    op2.push_back(in[0]);
+    in.erase(in.begin()+0);
+    permutation(in,op1);
+    permutation(in,op2);
+}
+
+int main() {
+    string in;
+    cin >> in;
+    string out = "";
+    out.push_back(in[0]);
+    in.erase(in.begin()+0);
+    permutation(in,out);
+    return 0;
+}
