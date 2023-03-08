@@ -1,0 +1,26 @@
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+void permutationWithCaseChange(string in, string out){
+    if(in.length() == 0){
+        cout << out << endl;
+        return;
+    }
+
+    string op1 = out;
+    string op2 = out;
+    op1.push_back(in[0]);
+    op2.push_back(toupper(in[0]));
+    in.erase(in.begin()+0);
+    permutationWithCaseChange(in,op1);
+    permutationWithCaseChange(in,op2);
+}
+
+int main() {
+    string in;
+    cin >> in;
+    string out = "";
+    permutationWithCaseChange(in,out);
+    return 0;
+}
