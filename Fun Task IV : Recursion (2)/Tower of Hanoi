@@ -1,0 +1,19 @@
+#include <iostream>
+using namespace std;
+
+void towerOfHanoi(char S, char H, char D, int n){
+    if(n==1){
+        cout << "moving plate " << n << " from " << S << " to " << D << endl;
+        return;
+    }
+    towerOfHanoi(S,D,H,n-1);
+    cout << "moving plate " << n << " from " << S << " to " << D << endl;
+    towerOfHanoi(H,S,D,n-1);
+}
+
+int main() {
+    int n;
+    cin >> n;
+    towerOfHanoi('S','H','D',n);
+    return 0;
+}
